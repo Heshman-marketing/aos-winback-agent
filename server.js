@@ -233,14 +233,13 @@ The subject line for this email is "A lot has changed at Operative." The body ne
 Structure it as follows:
 1. Open directly on the "a lot has changed" idea: briefly reintroduce Chris ("My name is Chris Hession and I lead marketing at Operative" or similar, natural phrasing), then lead with the fact that Operative itself has changed a lot since ${companyName} last worked with ${FORMER_PRODUCT}. Mention that Mike Napodano stepped into the role of CEO and Dang Ly joined as Chief Product Officer, and that this leadership has sharpened investment in AOS for digital media. Frame this as evolution and reinvestment, not a correction of the past.
 2. Add one sentence connecting that internal change to a broader shift you're seeing in the digital ad ops / order management landscape, relevant to ${companyName}'s scale and vertical.
-3. Include a <ul><li> block with exactly 3 bullets, in this order, written so they flow as a connected set of updates rather than three disconnected facts:
-   - Bullet 1: AOS for digital media has matured and expanded, with capabilities built for ${companyName}'s scale and complexity specifically.
-   - Bullet 2: a lighter, more casual mention that Operative is also rolling out new CRM capability and deeply embedded agentic functionality within AOS this year, phrased as an exciting addition rather than a formal roadmap announcement (e.g. "and there's more coming" energy, not a press-release tone).
-   - Bullet 3: Operative is currently running a migration offer, migrating companies off their existing system and getting them fully implemented on AOS entirely at no cost.
+3. Do NOT use bullet points in this email. Instead, write two short paragraphs:
+   - Paragraph A: AOS for digital media has matured significantly, with capabilities built for ${companyName}'s scale and complexity specifically. Include, with a light and casual tone rather than a formal roadmap announcement, that Operative is also rolling out new CRM capability and deeply embedded agentic functionality within AOS this year, and that it's shaping up to be a meaningful step forward.
+   - Paragraph B: migrating off ${companyName}'s current system and getting fully implemented on AOS is completely free, handled end to end by Operative's team. End this paragraph with the "reach out anytime" line from the general instructions.
 4. Soft CTA: invite them to take a look at the AOS product tour — link: ${tourURL} — descriptive anchor text.
 5. Close with a low-pressure line, something like "Worth a look, even just to see how things have moved." Do NOT ask for a meeting yet.
 
-Keep the total word count between 120-140 words.`),
+Keep the total word count between 130-150 words.`),
 
         // EMAIL 2 — "What I'm seeing across the digital advertising market." Personal market POV leads, pain/solution follows.
         generateEmail(systemPrompt, `Write Email 2 of a 5-part winback series for:
