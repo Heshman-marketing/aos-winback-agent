@@ -16,7 +16,10 @@ const CONTEXT_SERVICE_URL = process.env.CONTEXT_SERVICE_URL || "https://operativ
 const PRODUCT_TOUR_URL = "https://www.operative.com/aos-tour-roles/";
 const MONETIZATION_EBOOK_URL = "https://www.operative.com/resources/ebook-the-revenue-breakthrough-for-digital-media/";
 const AI_EBOOK_URL = "https://www.operative.com/resources/ebook-the-ai-imperative/";
-// TODO: confirm the real destination for the "book a call" CTA (emails 3-5) — placeholder for now.
+const NAPODANO_BLOG_URL = "https://www.operative.com/resources/enterprise-grade-capability-doesnt-require-enterprise-grade-complexity/";
+// NOTE: DEMO_URL is not currently wired to a working booking tool (no HubSpot meetings
+// link behind it), so Emails 3 and 4 no longer use it. Re-introduce once a real booking
+// destination exists.
 const DEMO_URL = "https://www.operative.com/request-demo/";
 
 const SENDER_NAME = "Chris Hession";
@@ -263,12 +266,17 @@ Former product: ${FORMER_PRODUCT}
 
 The subject line for this email is "What a modern OMS should actually do." The body should deliver on that framing directly: read like a short, credible checklist of what to expect from a modern OMS in 2026, not a generic proof-points pitch.
 
-Structure it as follows:
-1. Open with one or two sentences framing the email around this idea: a lot of teams are still evaluating OMS platforms against an outdated bar, and here's what a modern one should actually deliver today.
-2. One short transition sentence connecting that standard to what AOS for digital media delivers now, and to what ${jobTitle} at ${companyName} would care about most.
-3. Include a <ul><li> block with 3 bullets, each phrased as a "what to expect" standard (e.g. real-time visibility into X, automated Y, no manual Z) immediately followed by how AOS meets it. Personalize to ${jobTitle} and ${companyName}.
-4. CTA: invite them to a short personalized walkthrough of AOS — link: ${DEMO_URL} — descriptive anchor text like "grab 20 minutes for a personalized walkthrough."
-5. Close with a slightly firmer but still easy ask, something like "Would it be worth seeing how this maps to your setup today?"
+Follow this exact order, it matters:
+1. A short setup paragraph (2-3 sentences) establishing that a lot of teams are still evaluating OMS platforms against a bar that was set five or six years ago, and that it's worth resetting expectations for what "modern" actually means today. Give this a bit more texture than a single throwaway line, something concrete about how the landscape or buyer expectations have shifted, before pivoting.
+2. A single pivot sentence ending in something like "Here is what a modern one should actually deliver in 2026:" that leads DIRECTLY into the bullets with no paragraph in between.
+3. Immediately after that pivot sentence, the <ul><li> block with 3 bullets, each phrased as a "what to expect" standard (e.g. real-time visibility into X, automated Y, no manual Z) immediately followed by how AOS meets it.
+4. AFTER the bullets, not before, one short paragraph stating that AOS for digital media is built around exactly these standards, and connecting that to what it means specifically for ${jobTitle} at ${companyName} (e.g. fewer blockers, faster cycles, whatever fits their role).
+5. One more sentence naming a fourth thing worth expecting from a modern OMS: real AI-powered intelligence built into daily workflows, not bolted on as an afterthought.
+6. The "reach out anytime" line from the general instructions.
+7. CTA: point them to our AI Imperative ebook to see what that actually looks like in practice — link: ${AI_EBOOK_URL} — descriptive anchor text.
+8. Close with an easy, low-pressure line, something like "Worth a look to see how it compares to what you're managing today."
+
+Do not put any paragraph between the pivot sentence and the bullets. Do not put the "AOS is built around these standards" paragraph before the bullets, it belongs after. Do NOT reference booking a call, a demo, or a walkthrough anywhere in this email.
 
 Keep the total word count between 120-140 words.`),
 
@@ -284,11 +292,11 @@ The subject line for this email is "Free migration, no downtime, no catch." The 
 Structure it as follows:
 1. Open with one short, empathetic paragraph naming the real barriers to switching OMS platforms: cost of implementation, risk of disruption, complexity of migrating data and workflows, fear of downtime. Acknowledge directly that offers like "free migration" can sound too good to be true. Be direct, not salesy. These are legitimate concerns.
 2. One short paragraph on exactly how Operative removes those barriers, addressing the skepticism plainly: migrating off ${companyName}'s current system and getting fully implemented on AOS is completely free, handled end to end by Operative's team. No rip-and-replace. No downtime risk. Just a clear, managed path to going live, with nothing held back for later.
-3. Do NOT use bullet points in this email.
-4. CTA: invite them to book a call to walk through the offer and migration path — link: ${DEMO_URL} — descriptive anchor text.
-5. Close directly: something like "Happy to walk through exactly what this would look like for ${companyName}."
+3. One more short paragraph, in the main body (not a P.S.), pointing to CEO Mike Napodano's recent post on why enterprise-grade capability does not require enterprise-grade complexity — link: ${NAPODANO_BLOG_URL} — descriptive anchor text. Frame it as directly relevant to why AOS doesn't come with the complexity or heavy lift teams might expect from an enterprise-grade platform.
+4. Do NOT use bullet points in this email.
+5. Close directly by inviting them to reply so you can walk through exactly what this would look like for ${companyName}. Do NOT reference booking a call, a demo, or clicking a scheduling link, since the ask here is simply to reply.
 
-Keep the total word count between 100-120 words. No em-dashes anywhere.`),
+Keep the total word count between 110-130 words. No em-dashes anywhere.`),
 
         // EMAIL 5 — "Free implementation, whenever you're ready." Low-pressure tone, but with a real, light end-of-year deadline.
         generateEmail(systemPrompt, `Write Email 5 (final) of a 5-part winback series for:
