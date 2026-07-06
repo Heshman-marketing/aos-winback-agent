@@ -195,6 +195,8 @@ Hi [First Name],<br><br>[Opening sentence or two.]<br><br>[Body paragraph(s).]<u
 - Never use the word "publishers" or "digital publishers" — use "digital media companies", "digital-first media businesses", etc.
 - Never use the phrase "swap notes"
 - Never disparage ${FORMER_PRODUCT} or the customer's original decision to leave. Do not speculate about why they churned. Frame everything as "a lot has changed" and "here's where things stand now," not "here's what you got wrong."
+- These emails come from Chris personally, not a marketing department. Write with genuine personality: a real point of view, a bit of dry wit or directness where it fits naturally, contractions, sentence rhythm that sounds like a person typing an email, not corporate copy. Stay professional and credible, this is not casual banter, but avoid stiff or generic marketing phrasing.
+- Be concise. Cut throat-clearing openers, filler transitions, and any sentence that restates something already said. Every sentence should earn its place. Tight and direct reads as more confident than padded.
 - Write as Chris Hession personally, peer-to-peer, not as a marketing department`;
 
       const POSITIONING = `
@@ -239,7 +241,7 @@ Structure it as follows:
 4. Soft CTA: invite them to take a look at the AOS product tour — link: ${tourURL} — descriptive anchor text.
 5. Close with a low-pressure line, something like "Worth a look, even just to see how things have moved." Do NOT ask for a meeting yet.
 
-Keep the total word count between 130-150 words.`),
+Keep the total word count between 105-120 words.`),
 
         // EMAIL 2 — "What I'm seeing across the digital advertising market." Personal market POV leads, pain/solution follows.
         generateEmail(systemPrompt, `Write Email 2 of a 5-part winback series for:
@@ -258,7 +260,7 @@ Structure it as follows:
 5. CTA: download our Digital Media Monetization ebook for a broader look at what a modern OMS should do — link: ${MONETIZATION_EBOOK_URL} — descriptive anchor text.
 6. Close with a soft line like "Take a look and see what resonates." No meeting ask yet.
 
-Keep the total word count between 120-140 words.`),
+Keep the total word count between 100-115 words.`),
 
         // EMAIL 3 — "What a modern OMS should actually do." Checklist framing, proof mapped to each expectation.
         generateEmail(systemPrompt, `Write Email 3 of a 5-part winback series for:
@@ -281,7 +283,7 @@ Follow this exact order, it matters:
 
 Do not put any paragraph between the pivot sentence and the bullets. Do not put the "AOS is built around these standards" paragraph before the bullets, it belongs after. Do NOT reference booking a call, a demo, or a walkthrough anywhere in this email.
 
-Keep the total word count between 120-140 words.`),
+Keep the total word count between 100-115 words.`),
 
         // EMAIL 4 — "Free migration, no downtime, no catch." Address the "sounds too good to be true" skepticism head-on.
         generateEmail(systemPrompt, `Write Email 4 of a 5-part winback series for:
@@ -299,7 +301,7 @@ Structure it as follows:
 4. Do NOT use bullet points in this email.
 5. Close directly by inviting them to reply so you can walk through exactly what this would look like for ${companyName}. Do NOT reference booking a call, a demo, or clicking a scheduling link, since the ask here is simply to reply.
 
-Keep the total word count between 110-130 words. No em-dashes anywhere.`),
+Keep the total word count between 90-105 words. No em-dashes anywhere.`),
 
         // EMAIL 5 — "Free implementation, whenever you're ready." Low-pressure tone, but with a real, light end-of-year deadline.
         generateEmail(systemPrompt, `Write Email 5 (final) of a 5-part winback series for:
@@ -318,7 +320,7 @@ Structure it as follows:
 5. Sign off: Thanks,<br><br>Chris
 6. After the signoff, add a PS on a new line: P.S. <a href='${AI_EBOOK_URL}'>Download our latest ebook: The AI Imperative</a>, a look at how AI is reshaping ad monetization for digital media companies.
 
-Keep the total word count between 90-110 words, not counting the P.S. Do NOT reference previous emails by number. Mention the end-of-year deadline only once and keep it factual, not pressured. No em-dashes anywhere.`),
+Keep the total word count between 75-90 words, not counting the P.S. Do NOT reference previous emails by number. Mention the end-of-year deadline only once and keep it factual, not pressured. No em-dashes anywhere.`),
       ]);
 
       // Search for contact in HubSpot
