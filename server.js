@@ -190,6 +190,7 @@ Hi [First Name],<br><br>[Opening sentence or two.]<br><br>[Body paragraph(s).]<u
 - Only use the person's first name once, in the opening greeting (only in Email 1)
 - For HTML links, ALWAYS use single quotes for attributes: <a href='URL'>text</a>
 - Do NOT include any signature beyond "Chris" (no title, no phone number, no extra sign-off text)
+- The body must start immediately with "Hi [First Name]," with no leading space, no leading blank line, and no leading <br> or other tag before it
 - Somewhere near the close of every email, before the CTA or the signoff, include one brief, natural line inviting the person to reach out to Chris anytime with questions. Vary the phrasing each email, e.g. "Feel free to reach out anytime if you want to talk through any of this" or "Happy to answer questions whenever it's useful." Keep it low-key, not a second CTA.
 - Never use the word "publishers" or "digital publishers" — use "digital media companies", "digital-first media businesses", etc.
 - Never use the phrase "swap notes"
@@ -232,7 +233,10 @@ The subject line for this email is "A lot has changed at Operative." The body ne
 Structure it as follows:
 1. Open directly on the "a lot has changed" idea: briefly reintroduce Chris ("My name is Chris Hession and I lead marketing at Operative" or similar, natural phrasing), then lead with the fact that Operative itself has changed a lot since ${companyName} last worked with ${FORMER_PRODUCT}. Mention that Mike Napodano stepped into the role of CEO and Dang Ly joined as Chief Product Officer, and that this leadership has sharpened investment in AOS for digital media. Frame this as evolution and reinvestment, not a correction of the past.
 2. Add one sentence connecting that internal change to a broader shift you're seeing in the digital ad ops / order management landscape, relevant to ${companyName}'s scale and vertical.
-3. Include a <ul><li> block with 3 bullets personalized to ${jobTitle} and ${companyName}. One bullet should cover what's new in AOS for digital media specifically (not converged or linear capabilities). One bullet should mention that migrating off an existing system and getting fully implemented on AOS is handled by Operative's team at no cost. One bullet should reference that Operative is actively rolling out new CRM capability and deeply embedded agentic functionality within AOS this year.
+3. Include a <ul><li> block with exactly 3 bullets, in this order, written so they flow as a connected set of updates rather than three disconnected facts:
+   - Bullet 1: AOS for digital media has matured and expanded, with capabilities built for ${companyName}'s scale and complexity specifically.
+   - Bullet 2: a lighter, more casual mention that Operative is also rolling out new CRM capability and deeply embedded agentic functionality within AOS this year, phrased as an exciting addition rather than a formal roadmap announcement (e.g. "and there's more coming" energy, not a press-release tone).
+   - Bullet 3: Operative is currently running a migration offer, migrating companies off their existing system and getting them fully implemented on AOS entirely at no cost.
 4. Soft CTA: invite them to take a look at the AOS product tour — link: ${tourURL} — descriptive anchor text.
 5. Close with a low-pressure line, something like "Worth a look, even just to see how things have moved." Do NOT ask for a meeting yet.
 
@@ -345,11 +349,11 @@ Keep the total word count between 90-110 words, not counting the P.S. Do NOT ref
       }
 
       const properties = {};
-      if (email1) { properties.winback_email_1 = email1.body; console.log(`[queue] ✅ Email 1 ready`); }
-      if (email2) { properties.winback_email_2 = email2.body; console.log(`[queue] ✅ Email 2 ready`); }
-      if (email3) { properties.winback_email_3 = email3.body; console.log(`[queue] ✅ Email 3 ready`); }
-      if (email4) { properties.winback_email_4 = email4.body; console.log(`[queue] ✅ Email 4 ready`); }
-      if (email5) { properties.winback_email_5 = email5.body; console.log(`[queue] ✅ Email 5 ready`); }
+      if (email1) { properties.winback_email_1 = email1.body.trim(); console.log(`[queue] ✅ Email 1 ready`); }
+      if (email2) { properties.winback_email_2 = email2.body.trim(); console.log(`[queue] ✅ Email 2 ready`); }
+      if (email3) { properties.winback_email_3 = email3.body.trim(); console.log(`[queue] ✅ Email 3 ready`); }
+      if (email4) { properties.winback_email_4 = email4.body.trim(); console.log(`[queue] ✅ Email 4 ready`); }
+      if (email5) { properties.winback_email_5 = email5.body.trim(); console.log(`[queue] ✅ Email 5 ready`); }
 
       const updateRes = await fetch(
         `https://api.hubapi.com/crm/v3/objects/contacts/${contactId}`,
