@@ -186,15 +186,26 @@ Hi [First Name],<br><br>[Opening sentence or two.]<br><br>[Body paragraph(s).]<u
 - Use actual HTML tags: <br>, <br><br>, <ul>, <li>
 - Only use the person's first name once, in the opening greeting (only in Email 1)
 - For HTML links, ALWAYS use single quotes for attributes: <a href='URL'>text</a>
-- Do NOT include any signature beyond "Chris"
+- Do NOT include any signature beyond "Chris" (no title, no phone number, no extra sign-off text)
+- Somewhere near the close of every email, before the CTA or the signoff, include one brief, natural line inviting the person to reach out to Chris anytime with questions. Vary the phrasing each email, e.g. "Feel free to reach out anytime if you want to talk through any of this" or "Happy to answer questions whenever it's useful." Keep it low-key, not a second CTA.
 - Never use the word "publishers" or "digital publishers" — use "digital media companies", "digital-first media businesses", etc.
 - Never use the phrase "swap notes"
 - Never disparage ${FORMER_PRODUCT} or the customer's original decision to leave. Do not speculate about why they churned. Frame everything as "a lot has changed" and "here's where things stand now," not "here's what you got wrong."
 - Write as Chris Hession personally, peer-to-peer, not as a marketing department`;
 
+      const POSITIONING = `
+PRODUCT POSITIONING (apply throughout the series):
+- AOS is enterprise-grade, but do not frame it as complex or built only for large enterprises. It's configured to fit companies of all sizes. Never use language that makes it sound like a heavy, hard-to-implement enterprise system.
+- ${FORMER_PRODUCT} only handled digital advertising for these accounts. Lean into "AOS for digital media" specifically. Do NOT emphasize converged or linear/TV capabilities as a selling point for this audience, since it's not relevant to how they used ${FORMER_PRODUCT}.
+- Migrating off an existing system and getting fully implemented on AOS is completely free, handled end to end by Operative's team. This is a real, standing offer, not a limited-time promotion. Introduce this naturally wherever it fits rather than saving it only for one email.
+- Operative is rolling out new CRM capability and deeply embedded agentic functionality within AOS this year. Reference this as active, near-term roadmap (already underway) where it strengthens the "a lot has changed" narrative, not as a distant or speculative future plan.
+- Mike Napodano stepped into the role of CEO (he was already part of Operative's leadership team). Dang Ly joined as Chief Product Officer. Do not say Napodano "joined" Operative, since he was already there.`;
+
       const systemPrompt = `You are a B2B marketing assistant for Operative writing a 5-part winback email series on behalf of ${SENDER_NAME}, ${SENDER_TITLE}, targeting former ${FORMER_PRODUCT} customers to reintroduce AOS, Operative's modern order management system.${contextBlock}
 
 ${FORMATTING}
+
+${POSITIONING}
 
 Return ONLY valid JSON with this exact structure, no markdown, no preamble:
 {"body": "..."}
@@ -214,13 +225,13 @@ Job Title: ${jobTitle}
 Former product: ${FORMER_PRODUCT}
 
 Structure it as follows:
-1. Open with a specific, credible observation about how the ad ops / order management landscape has shifted recently, relevant to ${companyName}'s scale and vertical. This should read as genuine industry perspective, not a sales hook.
-2. Briefly reintroduce Chris ("My name is Chris Hession and I lead marketing at Operative" or similar, natural phrasing) and note that Operative itself has changed a lot since ${companyName} last worked with Operative.One. Specifically mention that Operative has new leadership driving the next phase of the company: Mike Napodano became CEO and Dang Ly joined as Chief Product Officer, and that this leadership has sharpened investment in AOS. Frame this as evolution and reinvestment, not a correction of the past.
-3. Include a <ul><li> block with 3 bullets on what is new or different about AOS today, personalized to ${jobTitle} and ${companyName}.
+1. Open with a specific, credible observation about how the digital ad ops / order management landscape has shifted recently, relevant to ${companyName}'s scale and vertical. This should read as genuine industry perspective, not a sales hook.
+2. Briefly reintroduce Chris ("My name is Chris Hession and I lead marketing at Operative" or similar, natural phrasing) and note that Operative itself has changed a lot since ${companyName} last worked with ${FORMER_PRODUCT}. Mention that Mike Napodano stepped into the role of CEO and Dang Ly joined as Chief Product Officer, and that this leadership has sharpened investment in AOS for digital media. Frame this as evolution and reinvestment, not a correction of the past.
+3. Include a <ul><li> block with 3 bullets personalized to ${jobTitle} and ${companyName}. One bullet should cover what's new in AOS for digital media specifically (not converged or linear capabilities). One bullet should mention that migrating off an existing system and getting fully implemented on AOS is handled by Operative's team at no cost. One bullet should reference that Operative is actively rolling out new CRM capability and deeply embedded agentic functionality within AOS this year.
 4. Soft CTA: invite them to take a look at the AOS product tour — link: ${tourURL} — descriptive anchor text.
 5. Close with a low-pressure line, something like "Worth a look, even just to see how things have moved." Do NOT ask for a meeting yet.
 
-Keep the total word count between 110-130 words.`),
+Keep the total word count between 120-140 words.`),
 
         // EMAIL 2 — Pain. Generic, non-accusatory frustrations + proof AOS has earned strong reception + comparison asset.
         generateEmail(systemPrompt, `Write Email 2 of a 5-part winback series for:
@@ -230,9 +241,9 @@ Job Title: ${jobTitle}
 Former product: ${FORMER_PRODUCT}
 
 Structure it as follows:
-1. Open with 1-2 sentences naming the frustrations we hear most often across the industry from teams on legacy OMS platforms (manual reconciliation, rigid workflows, slow support, limited reporting). Frame this generically as "teams across the industry tell us" — do NOT imply ${companyName} specifically had these problems.
-2. Transition into how AOS was built to directly address those friction points, and note that AOS has been shipping fast and landing well with the market since ${companyName} last evaluated Operative, picking up strong reviews and new enterprise media customers as it's matured. Keep this factual and non-hyperbolic, no invented statistics or star ratings.
-3. Include a <ul><li> block with 3 bullets on specific AOS capabilities personalized to ${jobTitle} and ${companyName}.
+1. Open with 1-2 sentences naming the frustrations we hear most often across the industry from teams on legacy digital OMS platforms (manual reconciliation, rigid workflows, slow support, limited reporting). Frame this generically as "teams across the industry tell us" — do NOT imply ${companyName} specifically had these problems.
+2. Transition into how AOS for digital media was built to directly address those friction points, and note that AOS has been shipping fast and landing well with the market since ${companyName} last evaluated Operative, picking up strong reviews and new digital media customers as it's matured. Keep this factual and non-hyperbolic, no invented statistics or star ratings.
+3. Include a <ul><li> block with 3 bullets on specific AOS capabilities for digital media personalized to ${jobTitle} and ${companyName}.
 4. CTA: download our Digital Media Monetization ebook for a broader look at what a modern OMS should do — link: ${MONETIZATION_EBOOK_URL} — descriptive anchor text.
 5. Close with a soft line like "Take a look and see what resonates." No meeting ask yet.
 
@@ -254,7 +265,7 @@ Structure it as follows:
 
 Keep the total word count between 110-130 words.`),
 
-        // EMAIL 4 — Offer. Address switching-cost objections + returning-customer incentive.
+        // EMAIL 4 — Offer. Address switching-cost objections + the free migration/implementation offer.
         generateEmail(systemPrompt, `Write Email 4 of a 5-part winback series for:
 Name: ${name}
 Company: ${companyName}
@@ -263,7 +274,7 @@ Former product: ${FORMER_PRODUCT}
 
 Structure it as follows:
 1. Open with one short, empathetic paragraph naming the real barriers to switching OMS platforms: cost of implementation, risk of disruption, complexity of migrating data and workflows, fear of downtime. Be direct, not salesy. These are legitimate concerns.
-2. One short paragraph on how Operative removes those barriers for returning customers specifically: implementation is free, migration is handled end to end by Operative's team, no rip-and-replace, no downtime risk, and returning customers get priority onboarding. [NOTE TO USER: confirm the exact incentive terms before this goes live — the draft assumes free implementation plus priority onboarding, matching what we offer new AOS customers.]
+2. One short paragraph on how Operative removes those barriers: migrating off ${companyName}'s current system and getting fully implemented on AOS is completely free, handled end to end by Operative's team. No rip-and-replace. No downtime risk. Just a clear, managed path to going live.
 3. Do NOT use bullet points in this email.
 4. CTA: invite them to book a call to walk through the offer and migration path — link: ${DEMO_URL} — descriptive anchor text.
 5. Close directly: something like "Happy to walk through exactly what this would look like for ${companyName}."
