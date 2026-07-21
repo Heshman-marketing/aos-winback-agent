@@ -17,6 +17,7 @@ const PRODUCT_TOUR_URL = "https://www.operative.com/aos-tour-roles/";
 const MONETIZATION_EBOOK_URL = "https://www.operative.com/resources/ebook-the-revenue-breakthrough-for-digital-media/";
 const AI_EBOOK_URL = "https://www.operative.com/resources/ebook-the-ai-imperative/";
 const NAPODANO_BLOG_URL = "https://www.operative.com/resources/enterprise-grade-capability-doesnt-require-enterprise-grade-complexity/";
+const OFFER_PAGE_URL = "https://www.operative.com/aos-digital-offer/";
 // NOTE: DEMO_URL is not currently wired to a working booking tool (no HubSpot meetings
 // link behind it), so Emails 3 and 4 no longer use it. Re-introduce once a real booking
 // destination exists.
@@ -237,7 +238,7 @@ Structure it as follows:
 2. Add one sentence connecting that internal change to a broader shift you're seeing in the digital ad ops / order management landscape, relevant to ${companyName}'s scale and vertical.
 3. Do NOT use bullet points in this email. Instead, write two short paragraphs:
    - Paragraph A: AOS for digital media has matured significantly, with capabilities built for ${companyName}'s scale and complexity specifically. Include, with a light and casual tone rather than a formal roadmap announcement, that Operative is also rolling out new CRM capability and deeply embedded agentic functionality within AOS this year, and that it's shaping up to be a meaningful step forward.
-   - Paragraph B: migrating off ${companyName}'s current system and getting fully implemented on AOS is completely free, handled end to end by Operative's team. End this paragraph with the "reach out anytime" line from the general instructions.
+   - Paragraph B: migrating off ${companyName}'s current system and getting fully implemented on AOS is completely free, handled end to end by Operative's team. Link the mention of this offer to ${OFFER_PAGE_URL} using descriptive anchor text (e.g. "see how our free implementation offer works"). End this paragraph with the "reach out anytime" line from the general instructions.
 4. Soft CTA: invite them to take a look at the AOS product tour — link: ${tourURL} — descriptive anchor text.
 5. Close with a low-pressure line, something like "Worth a look, even just to see how things have moved." Do NOT ask for a meeting yet.
 
@@ -255,7 +256,7 @@ The subject line for this email is "What I'm seeing across the digital advertisi
 Structure it as follows:
 1. Open in first person as Chris sharing what he's actually seeing across the digital advertising market right now, relevant to ${companyName}'s vertical and scale. This should feel like a real point of view from someone close to the industry.
 2. Connect that observation to a pattern: the frustrations we hear most often across the industry from teams still on legacy digital OMS platforms (manual reconciliation, rigid workflows, slow support, limited reporting). Frame this generically as "teams across the industry tell us" — do NOT imply ${companyName} specifically had these problems.
-3. Transition into how AOS for digital media was built to directly address those friction points, and note that AOS has been shipping fast and landing well with the market since ${companyName} last evaluated Operative, picking up strong reviews and new digital media customers as it's matured. Keep this factual and non-hyperbolic, no invented statistics or star ratings.
+3. Transition into how AOS for digital media was built to directly address those friction points. Note that AOS is now widely adopted, with over $20B of annual ad revenue under management and more than 6,000 global users, as concrete proof of where the market has landed since ${companyName} last evaluated Operative. Use these two figures exactly as given, do not round them differently or invent additional statistics.
 4. Include a <ul><li> block with 3 bullets on specific AOS capabilities for digital media personalized to ${jobTitle} and ${companyName}.
 5. CTA: download our Digital Media Monetization ebook for a broader look at what a modern OMS should do — link: ${MONETIZATION_EBOOK_URL} — descriptive anchor text.
 6. Close with a soft line like "Take a look and see what resonates." No meeting ask yet.
@@ -277,13 +278,14 @@ Follow this exact order, it matters:
 3. Immediately after that pivot sentence, the <ul><li> block with 3 bullets, each phrased as a "what to expect" standard (e.g. real-time visibility into X, automated Y, no manual Z) immediately followed by how AOS meets it.
 4. AFTER the bullets, not before, one short paragraph stating that AOS for digital media is built around exactly these standards, and connecting that to what it means specifically for ${jobTitle} at ${companyName} (e.g. fewer blockers, faster cycles, whatever fits their role).
 5. One more sentence naming a fourth thing worth expecting from a modern OMS: real AI-powered intelligence built into daily workflows, not bolted on as an afterthought.
-6. The "reach out anytime" line from the general instructions.
-7. CTA: point them to our AI Imperative ebook to see what that actually looks like in practice — link: ${AI_EBOOK_URL} — descriptive anchor text.
-8. Close with an easy, low-pressure line, something like "Worth a look to see how it compares to what you're managing today."
+6. One brief sentence noting that switching to get there is covered by Operative's free migration and implementation offer, linked to ${OFFER_PAGE_URL} with descriptive anchor text (e.g. "see the details on our free implementation offer").
+7. The "reach out anytime" line from the general instructions.
+8. CTA: point them to our AI Imperative ebook to see what that actually looks like in practice — link: ${AI_EBOOK_URL} — descriptive anchor text.
+9. Close with an easy, low-pressure line, something like "Worth a look to see how it compares to what you're managing today."
 
 Do not put any paragraph between the pivot sentence and the bullets. Do not put the "AOS is built around these standards" paragraph before the bullets, it belongs after. Do NOT reference booking a call, a demo, or a walkthrough anywhere in this email.
 
-Keep the total word count between 100-115 words.`),
+Keep the total word count between 110-125 words.`),
 
         // EMAIL 4 — "Free migration, no downtime, no catch." Address the "sounds too good to be true" skepticism head-on.
         generateEmail(systemPrompt, `Write Email 4 of a 5-part winback series for:
@@ -314,7 +316,7 @@ The subject line for this email is "Free implementation, whenever you're ready."
 
 Structure it as follows:
 1. Open by acknowledging this is the last note in this particular series, but keep it light, not final-sounding. Something like noting you don't want to keep filling their inbox.
-2. One short paragraph reiterating the free migration and implementation offer, and noting plainly, once, that it applies to contracts signed by the end of the year, so sooner conversations leave more runway. Keep this factual and calm, not pressured.
+2. One short paragraph reiterating the free migration and implementation offer, linked to ${OFFER_PAGE_URL} with descriptive anchor text (e.g. "full details on the offer are here"), and noting plainly, once, that it applies to contracts signed by the end of the year, so sooner conversations leave more runway. Keep this factual and calm, not pressured.
 3. Do NOT use bullet points in this email.
 4. Close with this exact structure: start with "Hit reply and we'll find 20 minutes to talk it through." then add one specific sentence about what you would want to discuss regarding ${companyName}'s current ad ops setup.
 5. Sign off: Thanks,<br><br>Chris
